@@ -58,7 +58,8 @@ def dfs(s,e):
 		if (right(list(current[0])) != -1) and (current[0] not in visited):
 			t = tuple((right(list(current[0])),list(current[1])))
 			q.append(t)
-		visited.append(current)
+		if current[0] not in visited:
+			visited.append(current[0])
 
 
 #start

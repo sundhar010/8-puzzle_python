@@ -57,12 +57,11 @@ def bfs(s,e):
 		if (down(list(current[0])) != -1) and (current[0] not in visited):
 			t = tuple((down(list(current[0])),list(current[1])))
 			q.append(t)
-		if current[0] not in visited:
+		if current[0] not in visited :
 			visited.append(current[0])
 
-
 #start
-start = [0,1,3,
+start = [1,0,3,
 		4,2,5,
 		7,8,6]
 
