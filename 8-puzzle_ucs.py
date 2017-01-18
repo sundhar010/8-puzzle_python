@@ -97,7 +97,7 @@ def bfs(s,e):
 		current = tuple(q.get())
 		current[1].append(current[0])
 		if(current[0] == e):
-			return current[1]
+			return current[1],current[2]
 		if (left(list(current)) != -1) and (current[0] not in visited):
 			t = tuple(left(tuple(current)))
 			q.put(t,t[2])
@@ -124,8 +124,10 @@ end = [1,2,3,
 	   4,5,6,
 	   7,8,0]
 
-path =  bfs(list(start),list(end))
-
+path,cost =  bfs(list(start),list(end))
+print "----------------"
+print "cost :",cost
+print "----------------"
 for l in path:
 	print l[0:3]
 	print l[3:6]
