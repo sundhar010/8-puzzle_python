@@ -1,4 +1,7 @@
+#team sundhar,hima,preethi
+#python
 
+#does left move by swaping 0 with the respective element
 def left(l):
 	i = l.index(0)
 	if i  in [0,3,6]:
@@ -6,9 +9,9 @@ def left(l):
 	temp = l[i-1]
 	l[i-1] = l[i]
 	l[i] = temp 
-	return l
+	return l #returns new state
 
-
+#does right move by swaping 0 with the respective element
 def right(l):
 	i = l.index(0)
 	if i  in [2,5,8]:
@@ -16,9 +19,9 @@ def right(l):
 	temp = l[i+1]
 	l[i+1] = l[i]
 	l[i] = temp 
-	return l
+	return l #returns new state
 
-
+#does up move by swaping 0 with the respective element
 def up(l):
 	i = l.index(0)
 	if i in [0,1,2]:
@@ -26,8 +29,9 @@ def up(l):
 	temp = l[i]
 	l[i] = l[i-3]
 	l[i-3] = temp
-	return l
+	return l #returns new state
 
+#does down move by swaping 0 with the respective element
 def down(l):
 	i = l.index(0)
 	if i in [6,7,8]:
@@ -35,11 +39,12 @@ def down(l):
 	temp = l[i]
 	l[i] = l[i+3]
 	l[i+3] = temp
-	return l
+	return l #returns new state
 
+#this function cal the path from start to end  
 def dfs(s,e):
-	visited = []
-	q = [(s,[])] #[(vertex,path to this vertex [])]
+	visited = []   #this list is used to store all the visited states
+	q = [(s,[])] #[(vertex,path to this vertex [])] this list is used as a queue and the queue contains tuples with (state and path)
 	while q:
 		current = tuple(q.pop())
 		current[1].append(current[0])
@@ -62,6 +67,14 @@ def dfs(s,e):
 			visited.append(current[0])
 
 
+#prints the output
+def printPath(path):
+	for l in path:
+		print l[0:3]
+		print l[3:6]
+		print l[6:9]
+		print "###########"
+
 #start
 start = [0,1,2,
 		4,5,3,
@@ -74,8 +87,5 @@ end = [1,2,3,
 
 path =  dfs(list(start),list(end))
 
-for l in path:
-	print l[0:3]
-	print l[3:6]
-	print l[6:9]
-	print "###########"
+
+printPath(path)
