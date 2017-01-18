@@ -10,7 +10,7 @@
 1. The output is shown on the commandline.
 
 #How to run 
-1. `python ` <filename (input_bfs,input_dfs,input_ucs,input_bds)>
+1. `python ` filename (input_bfs,input_dfs,input_ucs,input_bds)
 
 
 #standard deviation :
