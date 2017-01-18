@@ -37,7 +37,10 @@ def down(l):
 	l[i+3] = temp
 	return l
 
-def bfs(s,e):
+def bds(s,e):
+
+# here we are running bfs in both the directions at the same time.
+# every variable with _start and _end indicate if it is related to bfs from start or goal respectively.
 	visited_strt = []
 	visited_end =[]
 	start = []
@@ -59,15 +62,9 @@ def bfs(s,e):
 			flag_end=1
 			current_end = tuple(q_end.pop(0))
 			current_end[1].append(current_end[0])
-
-
-
 		j=0
 		for i in visited_strt:
-
 			if (i in visited_end):
-			
-				
 				temp=[]
 				for k in start[j][1]:
 					temp.append(k)
@@ -128,15 +125,12 @@ def readfile( filename ):
     return state
 
 #start
-start = [1,0,2,
-		4,5,3,
-		7,8,6]
-
+start = readfile("input_bds")
 #End
 end = [1,2,3,
 	   4,5,6,
 	   7,8,0]
-path =  bfs(list(start),list(end))
+path =  bds(list(start),list(end))
 
 #print path
 
@@ -145,3 +139,4 @@ for l in path:
 	print l[3:6]
 	print l[6:9]
 	print "###########"
+print "cost is:",len(path)

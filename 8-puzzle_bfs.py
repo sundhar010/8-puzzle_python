@@ -73,6 +73,7 @@ def printPath(path):
 		print l[3:6]
 		print l[6:9]
 		print "###########"
+	print "cost is:",len(path)
 
 def readfile( filename ):
     f = open( filename )
