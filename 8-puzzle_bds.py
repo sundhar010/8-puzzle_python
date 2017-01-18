@@ -115,7 +115,17 @@ def bfs(s,e):
 				end.append(current_end)
 
 #		print q_strt , q_end
-
+def readfile( filename ):
+    f = open( filename )
+    data = f.read()
+    # Get rid of the newlines
+    data = data.strip( "\n" )
+    #Break the string into a list using a space as a seperator.
+    data = data.split( " " )
+    state = []
+    for element in data:
+        state.append( int( element ) )
+    return state
 
 #start
 start = [1,0,2,

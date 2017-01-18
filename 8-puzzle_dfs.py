@@ -75,10 +75,20 @@ def printPath(path):
 		print l[6:9]
 		print "###########"
 
+def readfile( filename ):
+    f = open( filename )
+    data = f.read()
+    # Get rid of the newlines
+    data = data.strip( "\n" )
+    #Break the string into a list using a space as a seperator.
+    data = data.split( " " )
+    state = []
+    for element in data:
+        state.append( int( element ) )
+    return state
+
 #start
-start = [0,1,2,
-		4,5,3,
-		7,8,6]
+start = readfile("input_dfs")
 
 #End
 end = [1,2,3,
