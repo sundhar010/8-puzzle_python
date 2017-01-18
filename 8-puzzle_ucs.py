@@ -1,6 +1,6 @@
 from Queue import PriorityQueue
 
-
+#class for PriorityQueue
 class MyPriorityQueue(PriorityQueue):
     def __init__(self):
         PriorityQueue.__init__(self)
@@ -31,7 +31,7 @@ def left(t):
 	l[i-1] = l[i]
 	l[i] = temp
 	path = list(t[1])
-	return tuple((l,path,cost))
+	return tuple((l,path,cost)) #returns the tuple with state,path,cumulative cost
  	
 
 def right(t):
@@ -50,7 +50,9 @@ def right(t):
 	l[i+1] = l[i]
 	l[i] = temp
 	path = list(t[1])
-	return tuple((l,path,cost))
+	return tuple((l,path,cost)) #returns the tuple with state,path,cumulative cost
+ 	
+
 
 def up(t):
 	l = list(t[0])
@@ -68,7 +70,9 @@ def up(t):
 	l[i-3] = l[i]
 	l[i] = temp
 	path = list(t[1])
-	return tuple((l,path,cost))
+	return tuple((l,path,cost)) #returns the tuple with state,path,cumulative cost
+ 	
+
 
 def down(t):
 	l = list(t[0])
@@ -86,9 +90,11 @@ def down(t):
 	l[i+3] = l[i]
 	l[i] = temp
 	path = list(t[1])
-	return tuple((l,path,cost))
+	return tuple((l,path,cost)) #returns the tuple with state,path,cumulative cost
+ 	
 
-def bfs(s,e):
+
+def ufs(s,e):
 	visited = []
 	start = (s,[],0) #(vertex,path to this vertex [])
 	q = MyPriorityQueue()
@@ -138,14 +144,12 @@ def readfile( filename ):
     return state
 
 #start
-start = [0,1,3,
-		4,2,5,
-		7,8,6]
+start = readfile("input_ucs")
 
 #End
 end = [1,2,3,
 	   4,5,6,
 	   7,8,0]
 
-path,cost =  bfs(list(start),list(end))
+path,cost =  ufs(list(start),list(end))
 printPath(path,cost)
