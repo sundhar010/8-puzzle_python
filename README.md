@@ -23,7 +23,7 @@ MEAN of DFS = 10.25 steps or cost        2,3,33,3
 MEAN of bidirectional = 4 steps or cost  2,4,4,6
 MEAN of uniform_cost ~ > 3.25 cost       5,3,3,2
 
-S.D of BFS = 6.45497
-S.D of DFS = 15.17399
-S.D of bidirectional = 1.63299
-S.D of uniform_cost = 1.25831
+S.D of BFS = 6.45497.
+S.D of DFS = 15.17399.
+S.D of bidirectional = 1.63299.
+S.D of uniform_cost = 1.25831.
